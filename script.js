@@ -23,15 +23,15 @@ function generatePDF(name, idNumber, rank, photoDataUrl) {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
 
-    // Add border
+    // Border
     doc.setLineWidth(1);
     doc.setDrawColor(0, 0, 255);
     doc.rect(10, 10, 190, 120);
 
-    // Add user photo
+    // User Photo
     doc.addImage(photoDataUrl, "JPEG", 15, 15, 30, 30);
 
-    // Add text
+    // Text
     doc.setFontSize(12);
     doc.text(`User Name: ${name}`, 55, 25);
     doc.text(`ID: ${idNumber}`, 150, 25);
@@ -40,7 +40,7 @@ function generatePDF(name, idNumber, rank, photoDataUrl) {
     doc.setFont("bold");
     doc.text(`You have secured ${rank}`, 60, 90);
 
-    // Save the PDF
+    // PDF
     doc.save(`${name}_Certificate.pdf`);
 }
 
