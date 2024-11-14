@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Certificate Generator</h2>
+    <form id="certificateForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <label for="rank">Rank:</label>
+        <select id="rank" name="rank" required>
+            <option value="First Rank">First Rank</option>
+            <option value="Second Rank">Second Rank</option>
+            <option value="Third Rank">Third Rank</option>
+        </select>
+
+        <button type="button" onclick="generateCertificate()">Generate Certificate</button>
+    </form>
+</div>
+
+<div id="certificate" class="certificate-container">
+    <div class="border">
+        <div class="photo-container">
+            <img id="userPhoto" src="" alt="User Photo">
+        </div>
+        <p>ID: <span id="userId"></span></p>
+        <p>User Name: <span id="userName"></span></p>
+        <h3>Congratulations!! <strong>You have secured <span id="userRank"></span></strong></h3>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
